@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Event-Finder/static/css/main.3d6a130f.css",
+    "main.js": "/Event-Finder/static/js/main.d41a4663.js",
+    "static/js/787.cce69fba.chunk.js": "/Event-Finder/static/js/787.cce69fba.chunk.js",
+    "static/media/concert.jpg": "/Event-Finder/static/media/concert.400294a472d31bf9c092.jpg",
+    "index.html": "/Event-Finder/index.html",
+    "main.3d6a130f.css.map": "/Event-Finder/static/css/main.3d6a130f.css.map",
+    "main.d41a4663.js.map": "/Event-Finder/static/js/main.d41a4663.js.map",
+    "787.cce69fba.chunk.js.map": "/Event-Finder/static/js/787.cce69fba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d6a130f.css",
+    "static/js/main.d41a4663.js"
+  ]
+}
