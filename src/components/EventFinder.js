@@ -3,18 +3,19 @@ import { useState, useEffect } from 'react';
 
 export default function EventFinder(props) {
     const currentDate = new Date()
-    const [searchParams, setSearchParams] = useState({
+    const [eventInfo, changeEventInfo] = useState({
       city: props.city,
-      datetime: `${currentDate.getFullYear()}-${String(currentDate.getMonth()+1).padStart(2,"0")}-${String(currentDate.getDate()).padStart(2, '0')}T${String(currentDate.getHours()).padStart(2,"0")}:${String(currentDate.getMinutes()).padStart(2,"0")}:00Z`
+      datetime: `${currentDate.getFullYear()}-${String(currentDate.getMonth()+1).padStart(2,"0")}-${String(currentDate.getDate()).padStart(2, '0')}T${String(currentDate.getHours()).padStart(2,"0")}:${String(currentDate.getMinutes()).padStart(2,"0")}:00Z`,
+      page: 0
     })
-    const [searchParamsChange, setSearchParamsChange] = useState({}) //To avoid sending data to getData before submit
-    const [data, setData] = useState('');
+    const [searchEvent, setSearchEvent] = useState(eventInfo) //To avoid sending data to getData before submit
+    const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
     async function getData() {
       try {
-        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=5&city=${searchParams.city}&startDateTime=${searchParams.datetime}&apikey=`); // API key must be added, this is empty for security purposes
-        setData(response.data._embedded.events);
+        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=5&page=${eventInfo.page}&city=${eventInfo.city}&startDateTime=${eventInfo.datetime}&apikey=`); // API key must be added, this is empty for security purposes
+        setData(response.data._embedded.events)
         setLoading(false);
       } catch (err) {
         console.error(err);
@@ -22,19 +23,16 @@ export default function EventFinder(props) {
     }
 
     useEffect(() => {
-      getData()
-    }, [searchParams.city, searchParams.datetime])
+      getData();
+    }, [eventInfo])
 
     useEffect(() => { //Handles Home submit
-      setSearchParams(params => {return {...params, city: props.city}})
+      changeEventInfo(eventInfo => {return {...eventInfo, city: props.city}})
     }, [props.city])
 
     const handleSubmit = (e) => { //Handles EventFinder submit
       e.preventDefault();
-      if (searchParamsChange.city != undefined) {
-        setSearchParams(params => {return {...params, city: searchParamsChange.city}})}
-      if (searchParamsChange.datetime != undefined) {
-        setSearchParams(params => {return {...params, datetime: searchParamsChange.datetime}})}
+      changeEventInfo({city: searchEvent.city, datetime: searchEvent.datetime, page: searchEvent.page})
     }
 
     if (isLoading) { //Wait for default fetch before loading to avoid errors
@@ -49,13 +47,13 @@ export default function EventFinder(props) {
             
             <form className="events-search d-flex justify-content-center flex-wrap" onSubmit={handleSubmit}>
               <div className="form-floating mb-3 col-md-2">
-                <input type="text" className="form-control" onChange={e => setSearchParamsChange({city: e.target.value})}></input>
-                <label for="city">Enter a city</label>
+                <input type="text" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, city: e.target.value}})}></input>
+                <label htmlFor="city">Enter a city</label>
               </div>
 
               <div className="form-floating mb-3">
-                <input type="datetime-local" className="form-control" onChange={e => setSearchParamsChange({datetime: e.target.value+':00Z'})}></input>
-                <label>Enter a date</label>
+                <input type="datetime-local" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, datetime: e.target.value+':00Z'}})}></input>
+                <label htmlFor="date">Enter a date</label>
               </div>
               <input type="submit" className="btn btn-primary mb-3" value="Search" />    
             </form>

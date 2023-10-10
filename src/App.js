@@ -4,6 +4,7 @@ import './styles/appendStyles.css';
 import Nav from './components/Nav';
 import EventFinder from './components/EventFinder';
 import concert from './img/concert.jpg';
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
         </div>
         </section>
 
-        <EventFinder city={city} />         
+        <EventFinder city={city} />
+        <ScrollToTop />
         </div>
   );
 }
