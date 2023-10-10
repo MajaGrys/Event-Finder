@@ -13,7 +13,7 @@ function App() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setCity(cityChange);
-        document.querySelector('#search').scrollIntoView();
+        window.location.href='#search';
     }
 
     return (
@@ -30,7 +30,7 @@ function App() {
                 <p>Search for events nearby you</p>
             </div>
             <div className="col-lg-5" onSubmit={handleSubmit}>
-                <form action="#" className="sign-up-form d-flex">
+                <form action="#search" className="sign-up-form d-flex">
                 <input type="text" className="form-control" placeholder="Enter a city" onChange={(e) => handleCityChange(e.target.value)} />
                 <input type="submit" className="btn btn-primary" value="Search" />
                 </form>

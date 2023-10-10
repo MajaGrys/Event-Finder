@@ -20,6 +20,7 @@ export default function EventFinder(props) {
         console.error(err);
       }
     }
+
     useEffect(() => {
       getData()
     }, [searchParams.city, searchParams.datetime])
@@ -41,9 +42,9 @@ export default function EventFinder(props) {
     } else {
         return (
             <section id="search" className="services">
-            <div className="container section-title" data-aos="fade-up">
+            <div className="container section-title">
                 <h2>Events</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <p>Specify the details below to search for events.</p>
             </div>
             
             <form className="events-search d-flex justify-content-center flex-wrap" onSubmit={handleSubmit}>
@@ -62,7 +63,7 @@ export default function EventFinder(props) {
             {data.map(e => {return (
               <div className="container col-lg-6" key={e.id}>
                   <div className="service-item d-flex">
-                    <img src={e.images[0].url} className="icon flex-shrink-0" />
+                    <img src={e.images[0].url} className="icon" />
                   <div>
                     <h4 className="title">{e.name}</h4>
                     <p className="description">{e.dates.start.localDate} {e.dates.start.localTime}<br />
