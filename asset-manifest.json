@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/Event-Finder/static/css/main.3d6a130f.css",
-    "main.js": "/Event-Finder/static/js/main.1debd4b2.js",
+    "main.css": "/Event-Finder/static/css/main.6db98c6f.css",
+    "main.js": "/Event-Finder/static/js/main.3a5ee617.js",
     "static/js/787.cce69fba.chunk.js": "/Event-Finder/static/js/787.cce69fba.chunk.js",
     "static/media/concert.jpg": "/Event-Finder/static/media/concert.400294a472d31bf9c092.jpg",
     "index.html": "/Event-Finder/index.html",
-    "main.3d6a130f.css.map": "/Event-Finder/static/css/main.3d6a130f.css.map",
-    "main.1debd4b2.js.map": "/Event-Finder/static/js/main.1debd4b2.js.map",
+    "static/media/menu.svg": "/Event-Finder/static/media/menu.154d6b1860ffc84851c81d3525701e3f.svg",
+    "main.6db98c6f.css.map": "/Event-Finder/static/css/main.6db98c6f.css.map",
+    "main.3a5ee617.js.map": "/Event-Finder/static/js/main.3a5ee617.js.map",
     "787.cce69fba.chunk.js.map": "/Event-Finder/static/js/787.cce69fba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d6a130f.css",
-    "static/js/main.1debd4b2.js"
+    "static/css/main.6db98c6f.css",
+    "static/js/main.3a5ee617.js"
   ]
 }
