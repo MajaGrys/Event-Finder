@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Event-Finder/static/css/main.21e73842.css",
-    "main.js": "/Event-Finder/static/js/main.9192ce2d.js",
+    "main.css": "/Event-Finder/static/css/main.336d8fef.css",
+    "main.js": "/Event-Finder/static/js/main.48580fd8.js",
     "static/js/787.cce69fba.chunk.js": "/Event-Finder/static/js/787.cce69fba.chunk.js",
     "static/media/concert.jpg": "/Event-Finder/static/media/concert.400294a472d31bf9c092.jpg",
     "index.html": "/Event-Finder/index.html",
     "static/media/menu.svg": "/Event-Finder/static/media/menu.154d6b1860ffc84851c81d3525701e3f.svg",
     "static/media/arrow_up.svg": "/Event-Finder/static/media/arrow_up.e338be6816255500720e774336389c52.svg",
-    "main.21e73842.css.map": "/Event-Finder/static/css/main.21e73842.css.map",
-    "main.9192ce2d.js.map": "/Event-Finder/static/js/main.9192ce2d.js.map",
+    "main.336d8fef.css.map": "/Event-Finder/static/css/main.336d8fef.css.map",
+    "main.48580fd8.js.map": "/Event-Finder/static/js/main.48580fd8.js.map",
     "787.cce69fba.chunk.js.map": "/Event-Finder/static/js/787.cce69fba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.21e73842.css",
-    "static/js/main.9192ce2d.js"
+    "static/css/main.336d8fef.css",
+    "static/js/main.48580fd8.js"
   ]
 }
