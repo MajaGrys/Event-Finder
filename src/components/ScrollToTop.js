@@ -17,7 +17,7 @@ export default function ScrollToTop() {
     return (
         <>
         {scrollButton && (
-        <button className="scroll-top" onClick={scrollToTop}><img src={arrowUp} /></button>
+        <button className="btn scroll-top" onClick={scrollToTop}><img src={arrowUp} /></button>
         )}
         </>
         
