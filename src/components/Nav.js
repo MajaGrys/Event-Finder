@@ -15,13 +15,13 @@ export default function Nav() {
         <ul>
           <li><a href="#home" className="active">Home</a></li>
           <li><a href="#search">Search for events</a></li>
-          <li><a href="#">New</a></li>
-          <li><a href="#">Trending</a></li>
+          {/* <li><a href="#">New</a></li>
+          <li><a href="#">Trending</a></li> */}
           <li><a href="https://github.com/MajaGrys" target="_blank">GitHub</a></li>
         </ul>
 
       </nav>
-      <a className="btn btn-getstarted mobile-nav-toggle" id="menu" onClick={mobileNavToogle}><img src={menu} /></a>
+      <a className="btn-getstarted mobile-nav-toggle" id="menu" onClick={mobileNavToogle}><img src={menu} /></a>
       </div>
       </header>
     )
