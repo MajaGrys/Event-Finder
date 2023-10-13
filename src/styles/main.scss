@@ -2,25 +2,49 @@
     width: 20px;
 }
 
-.events-search .btn-primary {
-border-radius: 4px;
-padding: 10px 20px;
-border: 0;
-background-color: var(--primary-color);
-color: var(--contrast-color);
-}
-
-.events-search .btn-primary:hover {
-color: var(--contrast-color);
-background-color: rgba(var(--primary-color-rgb), 0.8);
-}
-
-.events-search {
-    gap: 20px;
-}
-
 @media screen and (min-width: 1200px) {
     #menu {
         visibility: hidden;
     }
+}
+
+.events-search {
+    gap: 20px;
+
+    .btn-primary {
+        border-radius: 4px;
+        padding: 10px 20px;
+        border: 0;
+        background-color: var(--primary-color);
+        color: var(--contrast-color);
+        }
+    
+    .btn-primary:hover {
+        color: var(--contrast-color);
+        background-color: rgba(var(--primary-color-rgb), 0.8);
+        }
+}
+
+.page-link {
+    background-color: var(--primary-color);
+    color: var(--contrast-color);   
+}
+
+.change-page:hover {
+    color: var(--contrast-color);
+    background-color: rgba(var(--primary-color-rgb), 0.8);
+    cursor: pointer;
+}
+
+.current-page:hover {
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+    cursor: default;
+}
+
+.page-input {
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+    border: none;
+    width: 12px;
 }
