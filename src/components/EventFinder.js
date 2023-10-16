@@ -8,6 +8,7 @@ export default function EventFinder({ city }) {
       city: city,
       datetime: '',
       keyword: '',
+      category: '',
       sort: ''
     });
     const [searchEvent, setSearchEvent] = useState(eventInfo);
@@ -18,7 +19,7 @@ export default function EventFinder({ city }) {
     async function getData() {
       try {
         setLoading(true);
-        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${eventInfo.city}&startDateTime=${eventInfo.datetime}&keyword=${eventInfo.keyword}&sort=${eventInfo.sort}&apikey=`); // API key must be added, this is empty for security purposes 
+        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${eventInfo.city}&startDateTime=${eventInfo.datetime}&keyword=${eventInfo.keyword}&classificationName=${eventInfo.category}&sort=${eventInfo.sort}&apikey=`); // API key must be added, this is empty for security purposes 
         setData(response.data._embedded.events)
         setError(false);
         setLoading(false);
@@ -40,7 +41,7 @@ export default function EventFinder({ city }) {
     //EventFinder submit handler
     const handleSubmit = (e) => { 
       e.preventDefault();
-      changeEventInfo({city: searchEvent.city, datetime: searchEvent.datetime, sort: searchEvent.sort, keyword: searchEvent.keyword})
+      changeEventInfo({city: searchEvent.city, datetime: searchEvent.datetime, keyword: searchEvent.keyword, category: searchEvent.category, sort: searchEvent.sort})
     }
 
     return (
@@ -65,6 +66,19 @@ export default function EventFinder({ city }) {
         <div className="form-floating">
           <input type="datetime-local" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, datetime: e.target.value+':00Z'}})}></input>
           <label htmlFor="date">Enter a date</label>
+        </div>
+
+        <div className="form-floating mb-3">
+          <select className="form-control" onChange={e => setSearchEvent (info => {return {...info, category: e.target.value}})}>
+            <option value=''>Any</option>
+            <option value='Music'>Music</option>
+            <option value='Sports'>Sports</option>
+            <option value='Arts & Theatre'>Arts & Theatre</option>
+            <option value='Film'>Film</option>
+            <option value='Fairs & Festivals'>Fairs & Festivals</option>
+            <option value='Family'>Family</option>
+          </select>
+          <label htmlFor="date">Category</label>
         </div>
 
         <div className="form-floating mb-3">
