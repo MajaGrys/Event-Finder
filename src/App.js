@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './styles/main.scss';
 import './styles/appendStyles.css';
 import Nav from './components/Nav';
 import EventFinder from './components/EventFinder';
 import concert from './img/concert.jpg';
 import ScrollToTop from './components/ScrollToTop';
-
+import Footer from './components/Footer';
 
 function App() {
     const [city, setCity] = useState('');
@@ -31,7 +31,7 @@ function App() {
                 </div>
                 <div className="col-lg-5" onSubmit={handleSubmit}>
                     <form className="sign-up-form d-flex">
-                    <input type="text" className="form-control" placeholder="Enter a city" onChange={(e) => handleCitySubmit(e.target.value)} />
+                    <input type="text" name="city" className="form-control" placeholder="Enter a city" onChange={(e) => handleCitySubmit(e.target.value)} />
                     <input type="submit" className="btn btn-primary" value="Search" />
                     </form>
                 </div>
@@ -39,6 +39,7 @@ function App() {
             </div>
         </section>
         <EventFinder city={city} />
+        <Footer />
         <ScrollToTop />
         </div>
   );

@@ -20,6 +20,5 @@ export default function ScrollToTop() {
         <button className="btn scroll-top" onClick={scrollToTop}><img src={arrowUp} /></button>
         )}
         </>
-        
     )
 }

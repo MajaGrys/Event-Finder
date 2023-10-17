@@ -53,29 +53,29 @@ export default function EventFinder({ city }) {
       
       <form className="events-search d-flex justify-content-center flex-wrap" onSubmit={handleSubmit}>
         <div className="form-floating">
-          <input type="text" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, keyword: e.target.value}})}></input>
-          <label htmlFor="city">Enter a keyword</label>
+          <input type="text" id="keyword" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, keyword: e.target.value}})}></input>
+          <label htmlFor="keyword">Enter a keyword</label>
         </div>
 
         <div className="form-floating">
-          <input type="text" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, city: e.target.value}})}></input>
+          <input type="text" id="city" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, city: e.target.value}})}></input>
           <label htmlFor="city">Enter a city</label>
         </div>
 
         <div className="form-floating">
-          <input type="datetime-local" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, datetime: e.target.value+':00Z'}})}></input>
+          <input type="datetime-local" id="date" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, datetime: e.target.value+':00Z'}})}></input>
           <label htmlFor="date">Enter a date</label>
         </div>
 
         <div className="form-floating mb-3">
-          <select className="form-control" onChange={e => setSearchEvent (info => {return {...info, sort: e.target.value}})}>
+          <select className="form-control" id="sort" onChange={e => setSearchEvent (info => {return {...info, sort: e.target.value}})}>
             <option value='relevance,desc'>Relevance</option>
             <option value='date,asc'>Date (asc)</option>
             <option value='date,desc'>Date (desc)</option>
             <option value='name,asc'>Name (asc)</option>
             <option value='name,desc'>Name (desc)</option>
           </select>
-          <label htmlFor="date">Sort by</label>
+          <label htmlFor="sort">Sort by</label>
         </div>
 
         <input type="submit" className="btn btn-primary mb-3" value="Search" />  
