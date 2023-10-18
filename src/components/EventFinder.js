@@ -1,25 +1,20 @@
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useState, useEffect, useRef } from 'react';
-import FoundEvents from './FoundEvents';
 import { RotatingLines } from 'react-loader-spinner';
+import SearchOptions from './SearchOptions';
+import FoundEvents from './FoundEvents';
 
-export default function EventFinder({ city }) {
-    const [eventInfo, changeEventInfo] = useState({
-      city: city,
-      datetime: '',
-      keyword: '',
-      category: '',
-      sort: ''
-    });
-    const [searchEvent, setSearchEvent] = useState(eventInfo);
-    const [data, setData] = useState([]);
+export default function EventFinder() {
+    const { keyword, city, datetime, sort } = useSelector(state => state.eventInfo);
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [data, setData] = useState([]);
 
     async function getData() {
       try {
         setLoading(true);
-        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${eventInfo.city}&startDateTime=${eventInfo.datetime}&keyword=${eventInfo.keyword}&classificationName=${eventInfo.category}&sort=${eventInfo.sort}&apikey=`); // API key must be added, this is empty for security purposes 
+        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${city}&startDateTime=${datetime}&keyword=${keyword}&sort=${sort}&apikey=`); // API key must be added, this is empty for security purposes
         setData(response.data._embedded.events)
         setError(false);
         setLoading(false);
@@ -30,19 +25,8 @@ export default function EventFinder({ city }) {
     }
 
     useEffect(() => {
-      getData();
-    }, [eventInfo])
-
-    //Home submit handler
-    useEffect(() => { 
-      changeEventInfo(eventInfo => {return {...eventInfo, city: city}})
-    }, [city])
-
-    //EventFinder submit handler
-    const handleSubmit = (e) => { 
-      e.preventDefault();
-      changeEventInfo({city: searchEvent.city, datetime: searchEvent.datetime, keyword: searchEvent.keyword, category: searchEvent.category, sort: searchEvent.sort})
-    }
+        getData();
+    }, [keyword, city, datetime, sort])
 
     return (
       <section id="search" className="services">
@@ -52,49 +36,7 @@ export default function EventFinder({ city }) {
           <p>Specify the details below to search for events.</p>
       </div>
       
-      <form className="events-search d-flex justify-content-center flex-wrap" onSubmit={handleSubmit}>
-        <div className="form-floating">
-          <input type="text" id="keyword" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, keyword: e.target.value}})}></input>
-          <label htmlFor="keyword">Enter a keyword</label>
-        </div>
-
-        <div className="form-floating">
-          <input type="text" id="city" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, city: e.target.value}})}></input>
-          <label htmlFor="city">Enter a city</label>
-        </div>
-
-        <div className="form-floating">
-          <input type="datetime-local" id="date" className="form-control" onChange={e => setSearchEvent(info =>{return {...info, datetime: e.target.value+':00Z'}})}></input>
-          <label htmlFor="date">Enter a date</label>
-        </div>
-
-        <div className="form-floating mb-3">
-          <select className="form-control" id="sort" onChange={e => setSearchEvent (info => {return {...info, sort: e.target.value}})}>
-          <select className="form-control" onChange={e => setSearchEvent (info => {return {...info, category: e.target.value}})}>
-            <option value=''>Any</option>
-            <option value='Music'>Music</option>
-            <option value='Sports'>Sports</option>
-            <option value='Arts & Theatre'>Arts & Theatre</option>
-            <option value='Film'>Film</option>
-            <option value='Fairs & Festivals'>Fairs & Festivals</option>
-            <option value='Family'>Family</option>
-          </select>
-          <label htmlFor="date">Category</label>
-        </div>
-
-        <div className="form-floating mb-3">
-          <select className="form-control" onChange={e => setSearchEvent (info => {return {...info, sort: e.target.value}})}>
-            <option value='relevance,desc'>Relevance</option>
-            <option value='date,asc'>Date (asc)</option>
-            <option value='date,desc'>Date (desc)</option>
-            <option value='name,asc'>Name (asc)</option>
-            <option value='name,desc'>Name (desc)</option>
-          </select>
-          <label htmlFor="sort">Sort by</label>
-        </div>
-
-        <input type="submit" className="btn btn-primary mb-3" value="Search" />  
-      </form>
+      <SearchOptions />
 
       {isLoading
             ? <div className="container section-title"><RotatingLines
