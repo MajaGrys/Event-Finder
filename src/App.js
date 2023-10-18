@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import EventFinder from './components/EventFinder';
 import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Nav />
             <Home />
             <EventFinder />
+            <Footer />
             <ScrollToTop />
         </div>
   );
