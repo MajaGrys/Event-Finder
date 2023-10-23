@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeCity, changeDatetime, changeKeyword, changeSort } from '../redux/eventInfo';
+import { changeKeyword, changeCity, changeDatetime, changeCategory, changeSort } from '../redux/eventInfo';
 
 export default function SearchOptions() {
     const [input, setInput] = useState({
     keyword: '',
     city: '',
     datetime: '',
+    category: '',
     sort: ''
     })
 
@@ -25,6 +26,7 @@ export default function SearchOptions() {
         dispatch(changeCity(input.city));
         dispatch(changeKeyword(input.keyword));
         dispatch(changeDatetime(input.datetime));
+        dispatch(changeCategory(input.category));
         dispatch(changeSort(input.sort));
     }
 
@@ -33,17 +35,17 @@ export default function SearchOptions() {
 
         <div className="form-floating">
           <input type="text" name='keyword' className="form-control" onChange={handleChange}></input>
-          <label htmlFor="city">Enter a keyword</label>
+          <label id="keyword">Enter a keyword</label>
         </div>
 
         <div className="form-floating">
           <input type="text" name='city' className="form-control" onChange={handleChange}></input>
-          <label htmlFor="city">Enter a city</label>
+          <label id="city">Enter a city</label>
         </div>
 
         <div className="form-floating">
           <input type="datetime-local" name='datetime' className="form-control" onChange={handleChange}></input>
-          <label htmlFor="date">Enter a date</label>
+          <label id="date">Enter a date</label>
         </div>
 
         <div className="form-floating mb-3">
@@ -54,7 +56,20 @@ export default function SearchOptions() {
             <option value='name,asc'>Name (asc)</option>
             <option value='name,desc'>Name (desc)</option>
           </select>
-          <label htmlFor="date">Sort by</label>
+          <label id="sort">Sort by</label>
+        </div>
+
+        <div className="form-floating mb-3">
+          <select className="form-control" name='category' onChange={handleChange}>
+            <option value=''>Any</option>
+            <option value='Music'>Music</option>
+            <option value='Sports'>Sports</option>
+            <option value='Arts & Theatre'>Arts & Theatre</option>
+            <option value='Film'>Film</option>
+            <option value='Fairs & Festivals'>Fairs & Festivals</option>
+            <option value='Family'>Family</option>
+          </select>
+          <label id="category">Category</label>
         </div>
 
         <input type="submit" className="btn btn-primary mb-3" value="Search" />  

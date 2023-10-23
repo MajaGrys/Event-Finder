@@ -6,7 +6,7 @@ import SearchOptions from './SearchOptions';
 import FoundEvents from './FoundEvents';
 
 export default function EventFinder() {
-    const { keyword, city, datetime, sort } = useSelector(state => state.eventInfo);
+    const { keyword, city, datetime, category, sort } = useSelector(state => state.eventInfo);
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ export default function EventFinder() {
     async function getData() {
       try {
         setLoading(true);
-        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${city}&startDateTime=${datetime}&keyword=${keyword}&sort=${sort}&apikey=`); // API key must be added, this is empty for security purposes
+        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${city}&startDateTime=${datetime}&keyword=${keyword}&classificationName=${category}&sort=${sort}&apikey=`); // API key must be added, this is empty for security purposes
         setData(response.data._embedded.events)
         setError(false);
         setLoading(false);
@@ -26,7 +26,7 @@ export default function EventFinder() {
 
     useEffect(() => {
         getData();
-    }, [keyword, city, datetime, sort])
+    }, [keyword, city, datetime, category, sort])
 
     return (
       <section id="search" className="services">
