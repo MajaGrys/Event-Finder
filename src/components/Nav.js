@@ -15,6 +15,7 @@ export default function Nav() {
           <ul>
             <li><a href="#home" className="active">Home</a></li>
             <li><a href="#search">Search for events</a></li>
+            <li><a href="#availability">Availability</a></li>
             <li><a href="https://github.com/MajaGrys" target="_blank">GitHub</a></li>
           </ul>
 

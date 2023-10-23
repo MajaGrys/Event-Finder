@@ -3,8 +3,9 @@ import './styles/appendStyles.css';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import EventFinder from './components/EventFinder';
-import ScrollToTop from './components/ScrollToTop';
+import Map from './components/Map';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Nav />
             <Home />
             <EventFinder />
+            <Map />
             <Footer />
             <ScrollToTop />
         </div>
