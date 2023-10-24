@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changeKeyword, changeCity, changeDatetime, changeCategory, changeSort } from '../redux/eventInfo';
 
 export default function SearchOptions() {
@@ -11,7 +11,6 @@ export default function SearchOptions() {
     sort: ''
     })
 
-    const { city } = useSelector(state => state.eventInfo);
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
@@ -23,8 +22,8 @@ export default function SearchOptions() {
 
     const handleSubmit = (e) => { 
         e.preventDefault();
-        dispatch(changeCity(input.city));
         dispatch(changeKeyword(input.keyword));
+        dispatch(changeCity(input.city));
         dispatch(changeDatetime(input.datetime));
         dispatch(changeCategory(input.category));
         dispatch(changeSort(input.sort));
@@ -49,17 +48,6 @@ export default function SearchOptions() {
         </div>
 
         <div className="form-floating mb-3">
-          <select className="form-control" name='sort' onChange={handleChange}>
-            <option value='relevance,desc'>Relevance</option>
-            <option value='date,asc'>Date (asc)</option>
-            <option value='date,desc'>Date (desc)</option>
-            <option value='name,asc'>Name (asc)</option>
-            <option value='name,desc'>Name (desc)</option>
-          </select>
-          <label id="sort">Sort by</label>
-        </div>
-
-        <div className="form-floating mb-3">
           <select className="form-control" name='category' onChange={handleChange}>
             <option value=''>Any</option>
             <option value='Music'>Music</option>
@@ -70,6 +58,17 @@ export default function SearchOptions() {
             <option value='Family'>Family</option>
           </select>
           <label id="category">Category</label>
+        </div>
+
+        <div className="form-floating mb-3">
+          <select className="form-control" name='sort' onChange={handleChange}>
+            <option value='relevance,desc'>Relevance</option>
+            <option value='date,asc'>Date (asc)</option>
+            <option value='date,desc'>Date (desc)</option>
+            <option value='name,asc'>Name (asc)</option>
+            <option value='name,desc'>Name (desc)</option>
+          </select>
+          <label id="sort">Sort by</label>
         </div>
 
         <input type="submit" className="btn btn-primary mb-3" value="Search" />  
