@@ -2,6 +2,8 @@ html {
     cursor: default;
 }
 
+// Navigation
+
 #menu img {
     width: 20px;
 }
@@ -11,6 +13,8 @@ html {
         visibility: hidden;
     }
 }
+
+// Search for events section
 
 .events-search {
     gap: 20px;
@@ -29,6 +33,26 @@ html {
         }
 }
 
+.bg-badge {
+    background-color: var(--primary-color);
+    margin: 5px 10px 20px 10px;
+    padding: 10px;
+    font-weight: 500;
+
+    button {
+        border: 0px;
+        background-color: transparent;
+        padding: 0px;
+        margin-left: 5px;
+
+        img:hover {
+            opacity: 70%;
+        }
+    }
+}
+
+// Pagination
+
 .page-link {
     background-color: var(--primary-color);
     color: var(--contrast-color);   
@@ -46,12 +70,7 @@ html {
     cursor: default;
 }
 
-.page-input {
-    background-color: var(--primary-color);
-    color: var(--contrast-color);
-    border: none;
-    width: 12px;
-}
+// Availability section
 
 #map {
     cursor: all-scroll;

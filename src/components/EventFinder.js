@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RotatingLines } from 'react-loader-spinner';
 import SearchOptions from './SearchOptions';
 import FoundEvents from './FoundEvents';
+import CurrentSearch from './CurrentSearch';
 
 export default function EventFinder() {
     const { keyword, city, datetime, category, sort } = useSelector(state => state.eventInfo);
@@ -37,6 +38,7 @@ export default function EventFinder() {
       </div>
       
       <SearchOptions />
+      <CurrentSearch />
 
       {isLoading
             ? <div className="container section-title"><RotatingLines
