@@ -11,6 +11,8 @@ export default function Home() {
       e.preventDefault();
       dispatch(changeCity(input));
       window.location.href='#search';
+      setInput('')
+      e.target.reset()
     }
     
     return (

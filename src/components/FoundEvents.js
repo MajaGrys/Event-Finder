@@ -24,7 +24,7 @@ export default function FoundEvents({error, data}) {
                   <p className="description">{e.dates.start.localDate} {e.dates.start.localTime} <br />
                   {e.hasOwnProperty('_embedded') && <><a href={e._embedded.venues[0].url} target='_blank'>{e._embedded.venues[0].name}</a> {e._embedded.venues[0].address.line1}, {e._embedded.venues[0].city.name}, {e._embedded.venues[0].country.name} <br /></>}
                   {e.hasOwnProperty('place') && <>{e.place.address.line1}</>}
-                  {e.hasOwnProperty('classifications') && <>{e.classifications[0].segment.name} / {e.classifications[0].genre.name}</>}
+                  {e.hasOwnProperty('classifications') && <><span className="badge bg-secondary">{e.classifications[0].segment.name}</span> / <span className="badge bg-secondary">{e.classifications[0].genre.name}</span></>}
                   </p>
                   <a href={e.url} target='_blank'>Buy tickets</a>
                 </div>
