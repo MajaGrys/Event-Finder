@@ -28,7 +28,6 @@ html {
         }
     
     .btn-primary:hover {
-        color: var(--contrast-color);
         background-color: rgba(var(--primary-color-rgb), 0.8);
         }
 }
@@ -49,6 +48,18 @@ html {
             opacity: 70%;
         }
     }
+}
+
+.found-events .btn-primary {
+    border-radius: 4px;
+    padding: 10px;
+    border: 0;
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+    
+    &.btn-primary:hover {
+        background-color: rgba(var(--primary-color-rgb), 0.8);
+        }
 }
 
 // Pagination
