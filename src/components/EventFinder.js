@@ -5,6 +5,7 @@ import { RotatingLines } from 'react-loader-spinner';
 import SearchOptions from './SearchOptions';
 import FoundEvents from './FoundEvents';
 import CurrentSearch from './CurrentSearch';
+import '../styles/EventFinder.scss';
 
 export default function EventFinder() {
     const { keyword, city, datetime, category, sort } = useSelector(state => state.eventInfo);
@@ -30,7 +31,7 @@ export default function EventFinder() {
     }, [keyword, city, datetime, category, sort])
 
     return (
-      <section id="search" className="services">
+      <section id="search">
         
       <div className="container section-title">
           <h2>Events</h2>
@@ -41,7 +42,7 @@ export default function EventFinder() {
       <CurrentSearch />
 
       {isLoading
-            ? <div className="container section-title"><RotatingLines
+            ? <div className="loading container"><RotatingLines
             strokeColor="black"
             strokeWidth="5"
             animationDuration="0.75"
