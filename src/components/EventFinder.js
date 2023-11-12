@@ -42,7 +42,7 @@ export default function EventFinder() {
       <CurrentSearch />
 
       {isLoading
-            ? <div className="loading container"><RotatingLines
+            ? <div className="container loading"><RotatingLines
             strokeColor="black"
             strokeWidth="5"
             animationDuration="0.75"

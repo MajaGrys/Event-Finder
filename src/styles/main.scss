@@ -46,28 +46,27 @@ h2 {
 
     &:hover {
         background-color: var(--primary-color);
-        opacity: 80%;
+        color: white;
+        opacity: 0.8;
     }
 
-    & img {
+    img {
         cursor: pointer;
     }
 }
 
 .section-title {
+    padding-top: 80px;
     text-align: center;
-    & h2 {
-        margin-top: 50px;
-        
-        &::before, &::after {
+    
+    h2::before, h2::after {
             content: '—';
             margin: 10px;
             color: var(--primary-color);
-            opacity: 80%;
-        }
+            opacity: 0.8;
     }
 
-    & p{
+    & p {
         margin-bottom: 50px;
     }
 }
@@ -84,23 +83,7 @@ h2 {
 
 
 
-
-// Search for events section
-
-
-
-//     .btn-primary {
-//         border-radius: 4px;
-//         padding: 10px 20px;
-//         border: 0;
-//         background-color: var(--primary-color);
-//         color: var(--contrast-color);
-//         }
-    
-//     .btn-primary:hover {
-//         background-color: rgba(var(--primary-color-rgb), 0.8);
-//         }
-// }
+// Search for events
 
 // .bg-badge {
 //     background-color: var(--primary-color);
@@ -131,49 +114,3 @@ h2 {
 //         background-color: rgba(var(--primary-color-rgb), 0.8);
 //         }
 // }
-
-// // Pagination
-
-// .page-link {
-//     background-color: var(--primary-color);
-//     color: var(--contrast-color);   
-// }
-
-// .change-page:hover {
-//     color: var(--contrast-color);
-//     background-color: rgba(var(--primary-color-rgb), 0.8);
-//     cursor: pointer;
-// }
-
-// .current-page:hover {
-//     background-color: var(--primary-color);
-//     color: var(--contrast-color);
-//     cursor: default;
-// }
-
-// // Availability section
-
-// #map {
-//     cursor: all-scroll;
-// }
-
-// .tools  {
-//     position: absolute;
-//     z-index: 1;
-//     transform: translate(10px, 10px);
-
-//     button {
-//         background: var(--contrast-color);
-//         border-radius: 20px;
-//         transition: 0.3s;
-//         border: none;
-//         margin: 3px;
-
-//         img {
-//             padding: 2px;
-//         }
-
-//         &:hover {
-//             opacity: 80%;
-//         }
-// }}

@@ -1,0 +1,25 @@
+#map {
+    cursor: all-scroll;
+}
+
+.tools  {
+    position: absolute;
+    z-index: 1;
+    transform: translate(10px, 10px);
+
+    button {
+        background: white;
+        padding: 3px;
+        border-radius: 20px;
+        transition: 0.3s;
+        border: none;
+        margin: 3px;
+
+        img {
+            padding: 2px;
+        }
+
+        &:hover {
+            opacity: 80%;
+        }
+}}
