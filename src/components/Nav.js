@@ -1,27 +1,27 @@
+import { useRef } from'react';
+import '../styles/Nav.scss';
 import menu from '../img/menu.svg';
 
 export default function Nav() {
-    const mobileNavToogle = () => document.querySelector('body').classList.toggle('mobile-nav-active');
+  const navRef = useRef();
 
-    return (
-      <header id="header" className="header fixed-top d-flex align-items-center">
-      <div className="container-fluid d-flex align-items-center justify-content-between">
+  const showNavbar = () => {
+    navRef.current.classList.toggle('nav-active');
+  }
 
-        <a href="index.html" className="logo d-flex align-items-center me-auto me-xl-0">
-          <h1>EventFinder</h1>
-        </a>
+  return (
+    <header className="fixed-top shadow">
+      <a href="#home" className="logo event-finder">EventFinder</a>
 
-        <nav id="navmenu" className="navmenu" onClick={mobileNavToogle}>
-          <ul>
-            <li><a href="#home" className="active">Home</a></li>
-            <li><a href="#search">Search for events</a></li>
-            <li><a href="#availability">Availability</a></li>
-            <li><a href="https://github.com/MajaGrys" target="_blank">GitHub</a></li>
-          </ul>
+      <nav ref={navRef}>
+        <a href="#home">Home</a>
+        <a href="#search">Search for events</a>
+        <a href="#availability">Availability</a>
+        {/* <a href="#about">About</a> */}
+        <a href="https://github.com/MajaGrys/Event-Finder" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
 
-        </nav>
-        <a className="btn-getstarted mobile-nav-toggle" id="menu" onClick={mobileNavToogle}><img src={menu} /></a>
-        </div>
-        </header>
-    )
+      <button className="mobile-nav-btn" onClick={showNavbar}><img src={menu} alt='' /></button>
+    </header>
+  )
 }

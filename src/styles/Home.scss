@@ -1,0 +1,43 @@
+#home {
+    width: 100%;
+    height: 100vh;
+}
+
+#home img {
+    height: inherit;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    filter: brightness(0.5);
+    z-index: -1;
+}
+
+#home div {
+    height: inherit;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    color: white;
+}
+
+@media screen and (min-width: 1000px) {
+    #home div {
+        transform: translateX(-18vw) translateY(8vh);
+    }
+}
+
+#home p {
+    font-size: 20px;
+}
+
+#home input {
+    border: none;
+}
+
+#home .btn {
+    padding: 10px 15px;
+    position: relative;
+    top: -50%;
+    right: -100%;
+    transform: translateX(-85px);
+}

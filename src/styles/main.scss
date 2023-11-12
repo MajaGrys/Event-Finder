@@ -1,109 +1,179 @@
-html {
+/**
+* Template Name: Append
+* Updated: Sep 18 2023 with Bootstrap v5.3.2
+* Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play&family=Lato&family=Titillium+Web:wght@300&display=swap');
+:root {
+    --default-font: 'Lato', sans-serif;
+    --heading-font: 'Titillium Web', sans-serif;
+    --logo-font: 'Cairo Play', sans-serif;
+  }
+
+:root {
+    --background-color: #ffffff;
+    --primary-color: #e84545;
+    --secondary-color: #32353a;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--default-font);
     cursor: default;
 }
 
-// Navigation
-
-#menu img {
-    width: 20px;
+.event-finder {
+    font-family: var(--logo-font);
 }
 
-@media screen and (min-width: 1200px) {
-    #menu {
-        visibility: hidden;
+h2 {
+    font-family: var(--heading-font);
+    font-size: 50px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: var(--primary-color);
+        opacity: 80%;
+    }
+
+    & img {
+        cursor: pointer;
     }
 }
+
+.section-title {
+    text-align: center;
+    & h2 {
+        margin-top: 50px;
+        
+        &::before, &::after {
+            content: '—';
+            margin: 10px;
+            color: var(--primary-color);
+            opacity: 80%;
+        }
+    }
+
+    & p{
+        margin-bottom: 50px;
+    }
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+}
+
+
+
+
+
 
 // Search for events section
 
-.events-search {
-    gap: 20px;
 
-    .btn-primary {
-        border-radius: 4px;
-        padding: 10px 20px;
-        border: 0;
-        background-color: var(--primary-color);
-        color: var(--contrast-color);
-        }
+
+//     .btn-primary {
+//         border-radius: 4px;
+//         padding: 10px 20px;
+//         border: 0;
+//         background-color: var(--primary-color);
+//         color: var(--contrast-color);
+//         }
     
-    .btn-primary:hover {
-        background-color: rgba(var(--primary-color-rgb), 0.8);
-        }
-}
+//     .btn-primary:hover {
+//         background-color: rgba(var(--primary-color-rgb), 0.8);
+//         }
+// }
 
-.bg-badge {
-    background-color: var(--primary-color);
-    margin: 5px 10px 20px 10px;
-    padding: 10px;
-    font-weight: 500;
+// .bg-badge {
+//     background-color: var(--primary-color);
+//     margin: 5px 10px 20px 10px;
+//     padding: 10px;
+//     font-weight: 500;
 
-    button {
-        border: 0px;
-        background-color: transparent;
-        padding: 0px;
-        margin-left: 5px;
+//     button {
+//         border: 0px;
+//         background-color: transparent;
+//         padding: 0px;
+//         margin-left: 5px;
 
-        img:hover {
-            opacity: 70%;
-        }
-    }
-}
+//         img:hover {
+//             opacity: 70%;
+//         }
+//     }
+// }
 
-.found-events .btn-primary {
-    border-radius: 4px;
-    padding: 10px;
-    border: 0;
-    background-color: var(--primary-color);
-    color: var(--contrast-color);
+// .found-events .btn-primary {
+//     border-radius: 4px;
+//     padding: 10px;
+//     border: 0;
+//     background-color: var(--primary-color);
+//     color: var(--contrast-color);
     
-    &.btn-primary:hover {
-        background-color: rgba(var(--primary-color-rgb), 0.8);
-        }
-}
+//     &.btn-primary:hover {
+//         background-color: rgba(var(--primary-color-rgb), 0.8);
+//         }
+// }
 
-// Pagination
+// // Pagination
 
-.page-link {
-    background-color: var(--primary-color);
-    color: var(--contrast-color);   
-}
+// .page-link {
+//     background-color: var(--primary-color);
+//     color: var(--contrast-color);   
+// }
 
-.change-page:hover {
-    color: var(--contrast-color);
-    background-color: rgba(var(--primary-color-rgb), 0.8);
-    cursor: pointer;
-}
+// .change-page:hover {
+//     color: var(--contrast-color);
+//     background-color: rgba(var(--primary-color-rgb), 0.8);
+//     cursor: pointer;
+// }
 
-.current-page:hover {
-    background-color: var(--primary-color);
-    color: var(--contrast-color);
-    cursor: default;
-}
+// .current-page:hover {
+//     background-color: var(--primary-color);
+//     color: var(--contrast-color);
+//     cursor: default;
+// }
 
-// Availability section
+// // Availability section
 
-#map {
-    cursor: all-scroll;
-}
+// #map {
+//     cursor: all-scroll;
+// }
 
-.tools  {
-    position: absolute;
-    z-index: 1;
-    transform: translate(10px, 10px);
+// .tools  {
+//     position: absolute;
+//     z-index: 1;
+//     transform: translate(10px, 10px);
 
-    button {
-        background: var(--contrast-color);
-        border-radius: 20px;
-        transition: 0.3s;
-        border: none;
-        margin: 3px;
+//     button {
+//         background: var(--contrast-color);
+//         border-radius: 20px;
+//         transition: 0.3s;
+//         border: none;
+//         margin: 3px;
 
-        img {
-            padding: 2px;
-        }
+//         img {
+//             padding: 2px;
+//         }
 
-        &:hover {
-            opacity: 80%;
-        }
-}}
+//         &:hover {
+//             opacity: 80%;
+//         }
+// }}
