@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Map.scss';
 import map from '../img/map.jpg';
 import zoomInBtn from '../img/zoom-in.svg';
 import zoomOutBtn from '../img/zoom-out.svg';

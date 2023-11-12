@@ -38,7 +38,7 @@ export default function SearchOptions() {
     }
 
     return(
-        <form className="events-search d-flex justify-content-center flex-wrap" onSubmit={handleSubmit}>
+        <form className="events-search d-flex justify-content-center flex-wrap mb-3" onSubmit={handleSubmit}>
 
         <div className="form-floating">
           <input type="text" id='keyword' name='keyword' className="form-control" onChange={handleChange}></input>
@@ -55,7 +55,7 @@ export default function SearchOptions() {
           <label htmlFor="datetime">Enter a date</label>
         </div>
 
-        <div className="form-floating mb-3">
+        <div className="form-floating">
           <select className="form-control" id='category' name='category' onChange={handleChange}>
             <option value=''>Any</option>
             <option value='Music'>Music</option>
@@ -68,7 +68,7 @@ export default function SearchOptions() {
           <label htmlFor="category">Category</label>
         </div>
 
-        <div className="form-floating mb-3">
+        <div className="form-floating">
           <select className="form-control" id='sort' name='sort' onChange={handleChange}>
             <option value='relevance,desc'>Relevance</option>
             <option value='date,asc'>Date (asc)</option>
@@ -79,7 +79,7 @@ export default function SearchOptions() {
           <label htmlFor="sort">Sort by</label>
         </div>
 
-        <input type="submit" className="btn btn-primary mb-3" value="Search" />  
+        <input type="submit" className="btn p-3" value="Search" />  
         </form>
     )
 }
