@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Event-Finder/static/css/main.2b317f6f.css",
-    "main.js": "/Event-Finder/static/js/main.58566084.js",
+    "main.css": "/Event-Finder/static/css/main.0e89c9ed.css",
+    "main.js": "/Event-Finder/static/js/main.cb4d997e.js",
     "static/js/787.cce69fba.chunk.js": "/Event-Finder/static/js/787.cce69fba.chunk.js",
     "static/media/concert.jpg": "/Event-Finder/static/media/concert.400294a472d31bf9c092.jpg",
     "static/media/map.jpg": "/Event-Finder/static/media/map.db69b4f123ada759e397.jpg",
@@ -12,12 +12,12 @@
     "static/media/menu.svg": "/Event-Finder/static/media/menu.154d6b1860ffc84851c81d3525701e3f.svg",
     "static/media/x-circle.svg": "/Event-Finder/static/media/x-circle.349decabcc6fe3c9ecc6d7f70faf0b7c.svg",
     "static/media/arrow_up.svg": "/Event-Finder/static/media/arrow_up.e338be6816255500720e774336389c52.svg",
-    "main.2b317f6f.css.map": "/Event-Finder/static/css/main.2b317f6f.css.map",
-    "main.58566084.js.map": "/Event-Finder/static/js/main.58566084.js.map",
+    "main.0e89c9ed.css.map": "/Event-Finder/static/css/main.0e89c9ed.css.map",
+    "main.cb4d997e.js.map": "/Event-Finder/static/js/main.cb4d997e.js.map",
     "787.cce69fba.chunk.js.map": "/Event-Finder/static/js/787.cce69fba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b317f6f.css",
-    "static/js/main.58566084.js"
+    "static/css/main.0e89c9ed.css",
+    "static/js/main.cb4d997e.js"
   ]
 }
