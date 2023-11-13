@@ -13,9 +13,9 @@ export default function Pagination({currentPage, numberOfPages, setCurrentPage})
     
     return (
         <div className="pagination justify-content-center">
-            {currentPage !== 1 && <a className="page-link change-page" onClick={previousPage}>&laquo;</a>}
-            <a className="page-link current-page">{currentPage} / {numberOfPages}</a>
-            {currentPage !== numberOfPages && <a className="page-link change-page" onClick={nextPage}>&raquo;</a>}
+            {currentPage !== 1 && <button className="page-link change-page" onClick={previousPage}>&laquo;</button>}
+            <span className="page-link current-page">{currentPage} / {numberOfPages}</span>
+            {currentPage !== numberOfPages && <button className="page-link change-page" onClick={nextPage}>&raquo;</button>}
         </div>
     )
 }

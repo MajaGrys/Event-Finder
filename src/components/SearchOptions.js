@@ -22,11 +22,11 @@ export default function SearchOptions() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        input.keyword != '' && dispatch(changeKeyword(input.keyword));
-        input.city != '' && dispatch(changeCity(input.city));
-        input.datetime != '' && dispatch(changeDatetime(input.datetime));
-        input.category != '' && dispatch(changeCategory(input.category));
-        input.sort != '' && dispatch(changeSort(input.sort));
+        input.keyword !== '' && dispatch(changeKeyword(input.keyword));
+        input.city !== '' && dispatch(changeCity(input.city));
+        input.datetime !== '' && dispatch(changeDatetime(input.datetime));
+        input.category !== '' && dispatch(changeCategory(input.category));
+        input.sort !== '' && dispatch(changeSort(input.sort));
         setInput({
           keyword: '',
           city: '',

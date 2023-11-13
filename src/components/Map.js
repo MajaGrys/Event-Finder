@@ -18,12 +18,12 @@ export default function Map() {
                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                     <React.Fragment>
                     <div className="tools">
-                        <button onClick={() => zoomIn()}><img src={zoomInBtn} /></button>
-                        <button onClick={() => zoomOut()}><img src={zoomOutBtn} /></button>
-                        <button onClick={() => resetTransform()}><img src={resetBtn} /></button>
+                        <button onClick={() => zoomIn()}><img src={zoomInBtn} alt='zoom in icon' /></button>
+                        <button onClick={() => zoomOut()}><img src={zoomOutBtn} alt='zoom out icon' /></button>
+                        <button onClick={() => resetTransform()}><img src={resetBtn} alt='reset map icon' /></button>
                     </div>
                     <TransformComponent>
-                        <img className='mw-100' src={map} />
+                        <img className='mw-100' src={map} alt='world map with areas in which Event Finder is available highlighted' />
                     </TransformComponent>
                     </React.Fragment>)}
                 </TransformWrapper>
