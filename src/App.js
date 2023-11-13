@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import EventFinder from './components/EventFinder';
 import Map from './components/Map';
-import Footer from './components/Footer';
+import About from './components/About';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Home />
         <EventFinder />
         <Map />
-        <Footer />
+        <About />
         <ScrollToTop />
         </>
   );

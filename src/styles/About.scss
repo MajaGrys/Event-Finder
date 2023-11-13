@@ -1,0 +1,30 @@
+#about {
+    margin-bottom: 100px;
+}
+
+#about h2 {
+    margin-bottom: 50px;
+}
+
+.about-content {
+    text-align: justify;
+}
+
+.about-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-wrap: wrap;
+
+        div {
+            margin-bottom: 50px;
+        }
+    }
+}
