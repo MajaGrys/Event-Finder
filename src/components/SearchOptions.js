@@ -74,7 +74,7 @@ export default function SearchOptions() {
             <option value='date,asc'>Date (asc)</option>
             <option value='date,desc'>Date (desc)</option>
             <option value='name,asc'>Name (asc)</option>
-            <option value='name,desc'>Name (desc)</option>
+            {/* <option value='name,desc'>Name (desc)</option> */}
           </select>
           <label htmlFor="sort">Sort by</label>
         </div>
