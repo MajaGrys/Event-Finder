@@ -2,10 +2,6 @@
     margin-bottom: 100px;
 }
 
-#about h2 {
-    margin-bottom: 50px;
-}
-
 .about-content {
     text-align: justify;
 }
@@ -17,6 +13,10 @@
     &:hover {
         opacity: 0.8;
     }
+}
+
+#about img {
+    object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
