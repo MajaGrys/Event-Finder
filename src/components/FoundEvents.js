@@ -12,7 +12,7 @@ export default function FoundEvents({error, data}) {
     return (
         <>
         {error
-          ? <div className="alert alert-danger mx-auto col-lg-6">
+          ? <div className="alert alert-danger mx-auto col-8">
           No events have been found.
           </div>
           : <>{currentEvents.map(e => {return (

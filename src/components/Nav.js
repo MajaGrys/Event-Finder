@@ -9,15 +9,21 @@ export default function Nav() {
     navRef.current.classList.toggle('nav-active');
   }
 
+  const navItems = [
+    {url: '#home', text: 'Home'},
+    {url: '#search', text: 'Search for events'},
+    {url: '#availability', text: 'Availability'},
+    {url: '#about', text: 'About'}
+  ]
+
   return (
     <header className="fixed-top shadow">
       <a href="#home" className="logo event-finder">EventFinder</a>
 
       <nav ref={navRef}>
-        <a href="#home">Home</a>
-        <a href="#search">Search for events</a>
-        <a href="#availability">Availability</a>
-        <a href="#about">About</a>
+        {navItems.map(item => {
+          return <a href={item.url} onClick={showNavbar}>{item.text}</a>
+        })}
         <a href="https://github.com/MajaGrys/Event-Finder" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
 

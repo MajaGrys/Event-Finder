@@ -62,9 +62,9 @@
 }
 
 @media screen and (min-width: 1000px) {
-    .event-item {
+    .event-item, .alert {
         max-width: 1000px;
-    }
+    }   
 }
 
 // Pagination
