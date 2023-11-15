@@ -22,7 +22,7 @@ export default function Nav() {
 
       <nav ref={navRef}>
         {navItems.map(item => {
-          return <a href={item.url} onClick={showNavbar}>{item.text}</a>
+          return <a href={item.url} onClick={showNavbar} key={item.url}>{item.text}</a>
         })}
         <a href="https://github.com/MajaGrys/Event-Finder" target="_blank" rel="noreferrer">GitHub</a>
       </nav>

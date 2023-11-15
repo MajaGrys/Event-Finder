@@ -30,12 +30,18 @@ export default function CurrentSearch() {
     }
 
     return (
-        <div className="container text-center col-lg-4 fs-5">
-            {keyword != '' && <span className="badge bg-badge">{keyword} <button name='keyword' onClick={removeSearch}><img src={removeIcon} alt='remove search icon' /></button></span>}
-            {city != '' && <span className="badge bg-badge">{city.slice(0,1).toUpperCase()+city.slice(1)}<button name='city' onClick={removeSearch}><img src={removeIcon} alt='remove search icon' /></button></span>}
-            {datetime != '' && <span className="badge bg-badge">{datetime.slice(0,10)} {datetime.slice(11,16)}<button name='datetime' onClick={removeSearch}><img src={removeIcon} alt='remove search icon' /></button></span>}
-            {category != '' && <span className="badge bg-badge">{category}<button name='category' onClick={removeSearch}><img src={removeIcon} alt='remove search icon' /></button></span>}
-            {sort != '' && <span className="badge bg-badge">{sort.slice(0,1).toUpperCase()+sort.slice(1).replace(',', ' ')}<button name='sort' onClick={removeSearch}><img src={removeIcon} alt='remove search icon' /></button></span>}
+        <div className="container text-center col-lg-4">
+
+            {keyword !== '' && <span className="badge bg-badge">{keyword} <button name='keyword' onClick={removeSearch} aria-label='Remove keyword'><img src={removeIcon} alt='' /></button></span>}
+
+            {city !== '' && <span className="badge bg-badge">{city.slice(0,1).toUpperCase()+city.slice(1)}<button name='city' onClick={removeSearch} aria-label='Remove city'><img src={removeIcon} alt='' /></button></span>}
+
+            {datetime !== '' && <span className="badge bg-badge">{datetime.slice(0,10)} {datetime.slice(11,16)}<button name='datetime' onClick={removeSearch} aria-label='Remove date'><img src={removeIcon} alt='' /></button></span>}
+
+            {category !== '' && <span className="badge bg-badge">{category}<button name='category' onClick={removeSearch} aria-label='Remove category'><img src={removeIcon} alt='' /></button></span>}
+
+            {sort !== '' && <span className="badge bg-badge">{sort.slice(0,1).toUpperCase()+sort.slice(1).replace(',', ' ')}<button name='sort' onClick={removeSearch} aria-label='Remove sorting'><img src={removeIcon} alt='' /></button></span>}
+
         </div>
     )
 }
