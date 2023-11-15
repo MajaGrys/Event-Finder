@@ -62,8 +62,10 @@ export default function SearchOptions() {
             <option value='Sports'>Sports</option>
             <option value='Arts & Theatre'>Arts & Theatre</option>
             <option value='Film'>Film</option>
-            <option value='Fairs & Festivals'>Fairs & Festivals</option>
             <option value='Family'>Family</option>
+            <option value='Hobby/Special Interest Expos'>Hobby/Special Interest Expos</option>
+            <option value='Ice Shows'>Ice Shows</option>
+            <option value='Virtual'>Virtual</option>
           </select>
           <label htmlFor="category">Category</label>
         </div>
