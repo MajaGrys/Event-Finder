@@ -13,7 +13,8 @@
 .bg-badge {
     background-color: var(--primary-color);
     margin: 5px 10px 20px 10px;
-    padding: 10px;
+    padding: 11px 10px 10px 10px;
+    font-size: medium;
     font-weight: 500;
 
     button {
@@ -22,8 +23,13 @@
         padding: 0px;
         margin-left: 5px;
 
+        img {
+            transform: translateY(-1.5px);
+            transition: 0.3s;
+        }
+
         img:hover {
-            opacity: 70%;
+            opacity: 0.7;
         }
     }
 }
@@ -31,40 +37,71 @@
 // Found events
 
 .event-icon {
-    width: 160px;
-    height: 100px;
+    width: 200px;
+    height: 140px;
     margin-right: 20px;
     object-fit: cover;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-.description a {
-    color: var(--primary-color);
-    text-decoration: none;
+.category-badge {
+    display: block;
+    margin-bottom: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 500;
+    transition: 0.3s;
 
-    &:hover {
-        opacity: 0.8;
+    &:hover, &:focus {
+        opacity: 0.7;
     }
 }
 
-.event-item::before {
-    content: '';
-    display: block;
-    margin: 10px;
-    width: 100%;
-    border: 1px solid var(--secondary-color);
-    opacity: 0.2;
+.venue {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
-@media screen and (max-width: 430px) {
+.description .btn {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 450px) {
     .event-item div {
         flex-wrap: wrap;
+    }
+
+    .event-icon {
+        margin: auto;
+    }
+
+    .description {
+        margin-top: 16px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .category-badge {
+        position: absolute;
+        right: 16px;
     }
 }
 
 @media screen and (min-width: 1000px) {
     .event-item, .alert {
         max-width: 1000px;
-    }   
+    }
+
+    .description .btn {
+        margin-top: 20px;
+    }
 }
 
 // Pagination
@@ -77,9 +114,9 @@
 .change-page:hover, .change-page:focus {
     background-color: var(--primary-color);
     color: white;
-    opacity: 0.8;
+    opacity: 0.7;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .current-page:hover {
