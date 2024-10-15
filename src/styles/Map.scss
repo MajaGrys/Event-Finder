@@ -21,6 +21,10 @@
         &:hover {
             background-color: rgb(217, 217, 217);
         }
+
+        img {
+            padding: 2px;
+        }
     }  
 }
 
@@ -41,7 +45,7 @@
             border-radius: 20px;
     
             img {
-                padding: 2px;
+                padding: 4px;
             }
         }
     }
