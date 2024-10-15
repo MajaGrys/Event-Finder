@@ -12,11 +12,12 @@ export default function EventFinder() {
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [data, setData] = useState([]);
+    const apiKey = process.env.REACT_APP_API_KEY;
 
     async function getData() {
       try {
         setLoading(true);
-        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${city}&startDateTime=${datetime}&keyword=${keyword}&classificationName=${category}&sort=${sort}&apikey=`); // API key must be added, this is empty for security purposes
+        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=${city}&startDateTime=${datetime}&keyword=${keyword}&classificationName=${category}&sort=${sort}&apikey=${apiKey}`); // API key must be added, this is empty for security purposes
         setData(response.data._embedded.events)
         setError(false);
         setLoading(false);
