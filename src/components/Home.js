@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeCity } from '../redux/eventInfo';
 import '../styles/Home.scss';
-import concert from '../img/concert.jpg';
+import concert from '../img/concert.webp';
 
 export default function Home() {
     const [input, setInput] = useState('');
