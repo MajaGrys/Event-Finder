@@ -1,7 +1,7 @@
 import './styles/main.scss';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import EventFinder from './components/EventFinder';
+import Events from './components/Events';
 import Map from './components/Map';
 import About from './components/About';
 import ScrollToTop from './components/ScrollToTop';
@@ -11,7 +11,7 @@ function App() {
         <>
         <Nav />
         <Home />
-        <EventFinder />
+        <Events />
         <Map />
         <About />
         <ScrollToTop />
