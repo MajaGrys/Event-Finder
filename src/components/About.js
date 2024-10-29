@@ -1,5 +1,5 @@
 import '../styles/About.scss';
-import bbq from '../img/bbq-36427_1920.png';
+import bbq from '../img/bbq-36427_1920.webp';
 
 export default function About() {
     return (
